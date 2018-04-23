@@ -1,0 +1,21 @@
+version: "3"
+services:    
+    order-management:
+        image: order-management
+        ports:
+          - 7510:7510
+        hostname: ggnlabvm-mqoe02 
+        network_mode: "host"        
+        environment:
+          - "SPRING_PROFILES_ACTIVE=dev"
+
+    order-fullfillment:
+        image: order-fullfillment
+        ports:
+          - 7520:7520
+        hostname: ggnlabvm-mqoe02
+        network_mode: "host"
+        environment:
+          - "SPRING_PROFILES_ACTIVE=dev"
+
+
